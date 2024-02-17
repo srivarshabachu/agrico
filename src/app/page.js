@@ -1,113 +1,91 @@
 import Image from "next/image";
-
+import Link from "next/link";
+import grains from "./assets/grains.png"
+import styles from './styles.css'
+import grainbag from "./assets/grainbag.png"
+import p1 from './assets/p1.png'
+import rama from './assets/rama.jpg'
+import raju from './assets/raju.png'
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <div>
+      <header className="flex items-center justify-between background-color: linear-gradient(white, green)" style={{
+        backgroundImage: 'linear-gradient(to right, white, green)',
+        display: 'flex',
+        width: '100%',
+        padding: '10px'
+      }} >
+
+        <Link className="heading main 500 font-semibold text-2xl " style={{ color: 'green', fontFamily: 'sans-serif' }} href={''}>AgriCo</Link>
+        <nav className="flex gap-7">
+          <Link href='/' className="bigger"><div style={{ display: 'flex', flexDirection:'column'}}><div>Home</div><div>(హోమ్ పేజీ)</div></div></Link>
+          <Link className="bigger" href={'/search'}><div style={{ display: 'flex', flexDirection: 'column' }}><div>🔍Search</div><div style={{marginLeft:'15px'}}>(శోధన)</div></div></Link>
+          <Link className="bigger" href={'/cart'}><div style={{ display: 'flex', flexDirection: 'column' }}><div>Cart</div><div>(కార్టు)</div></div></Link>
+          <Link className="bigger" href={'/addpro'}><div style={{ display: 'flex', flexDirection: 'column' }}><div>Add product()</div><div></div></div></Link>
+          <Link className="bigger" href={'/help'}><div style={{ display: 'flex', flexDirection: 'column' }}><div style={{ marginLeft: '30px' }}>Help</div><div>(సహాయం పేజీ)</div></div></Link>
+          <Link className="bigger" href={''}><div style={{ display: 'flex', flexDirection: 'column' }}><div>For Farmers</div><div>(రైతులకు)</div></div></Link>
+          <Link className="bigger" href={''}><div style={{ display: 'flex', flexDirection: 'column' }}><div>For Buyers</div>(వినియోగదారులకు)<div></div></div></Link>
+        </nav>
+      </header>
+      <div className="homecontent">
+        <Image className="imgc" style={{ opacity: '0.4' }} src={grains} fill={true} />
+        <div className="bodymatter">
+          <div className="leftbox">
+            <div className="leftboxtext" style={{ margin: '20px' }}>
+              Gone are the days of intermediaries dictating prices
+              <br />
+              <>TRADE IS MADE EASY, FAST AND TRANSPARENT!</><br />
+              <>"Harvesting smiles: where farmer-friendly apps meet buyer needs."</>
+            </div>
+          </div>
+          <div className="rightbox">
+            <Image src={grainbag} />
+          </div>
         </div>
+        <div className="bottommatter" style={{ display: 'flex', flexDirection: 'colomn' }}>
+          <div style={{ color: 'black', fontSize: '40px', paddingTop: '30px' }} className="heading">Success Stories</div>
+          <div style={{ display: 'flex', flexDirection: 'colomn' }}>
+            <div className="comp">
+
+              <div className="component">
+                {/* This div represents the background */}
+                <div className="background"></div>
+                {/* This div represents the content */}
+                <div className="content">
+                  <Image src={raju} style={{ padding: '10px' }} />
+                  <div className="heading">Raju</div>
+                  <div>Meet our Farmer of the Year, a true maestro of cultivation!  This year's triumph is nothing short of extraordinary – an astonishing 100 tons of tomatoes, each one bursting with flavor and exceptional quality. From field to feast, witness the artistry of agriculture reaching new heights. </div>
+                </div>
+              </div>
+            </div>
+            <div className="comp">
+              <div className="component">
+                {/* This div represents the background */}
+                <div className="background"></div>
+                {/* This div represents the content */}
+                <div className="content">
+                  <Image src={p1} style={{ padding: '10px' }} />
+                  <div className="heading">Srinivas</div>
+                  <div>Behold the harvest masterpiece from our Farmer of the Year! This year's bounty showcases an abundance of the freshest, most vibrant vegetables, a testament to their dedication to quality agriculture. From crisp greens to plump tomatoes, every crop embodies excellence in both quantity and quality.</div>
+                </div>
+              </div>
+            </div>
+            <div className="comp">
+              <div className="component">
+                {/* This div represents the background */}
+                <div className="background"></div>
+                {/* This div represents the content */}
+                <div className="content">
+                  <Image src={rama} style={{ padding: '10px' }} />
+                  <div className="heading">Rama</div>
+                  <div>Celebrating the resilience and strength of women in agriculture!From tending to the fields with unwavering determination to cultivating success, these women farmers are the heart of our agricultural community. Their dedication and skill shine through in every harvest, proving that the future of farming is both inclusive and empowering.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+    </div>
   );
 }
